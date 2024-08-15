@@ -1,20 +1,16 @@
-import { TopMenu } from "@/components";
+import { SideBar, TopMenu } from "@/components";
 
 export default function ShopLayout({
   children,
-  params: { locale },
 }: {
   children: React.ReactNode;
-  params: {
-    locale: string;
-  };
 }) {
-  console.log(locale, "desde layout de shop");
-
   return (
     <main className="min-h-screen">
-      <TopMenu locale={locale}/>
-      <div className="md:px-5">{children}</div>
+      <TopMenu />
+      <SideBar />
+      
+      <div className="px-5">{children}</div>
     </main>
   );
 }

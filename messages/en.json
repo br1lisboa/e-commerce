@@ -14,5 +14,15 @@
     "title": "Whooops! We are so sorry!.",
     "subtitle": "U can back to ",
     "button": "Home"
+  },
+  "SideBar": {
+    "search": "Search",
+    "perfil": "User",
+    "orders": "Orders",
+    "logout": "Sign out",
+    "login": "Sign in",
+    "adminProducts": "Products",
+    "adminOrders": "Orders",
+    "adminUsers": "Users"
   }
 }

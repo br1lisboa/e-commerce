@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { IoSearchOutline, IoCartOutline } from "react-icons/io5";
 
 import { titleFont } from "@/config/fonts";
+import { MenuButton } from "./MenuButton";
 
 const CENTER_MENU = [
   { title: "men", href: "/category/men" },
@@ -10,7 +11,8 @@ const CENTER_MENU = [
   { title: "kids", href: "/category/kids" },
 ];
 
-export function TopMenu({ locale }: { locale: string }) {
+export function TopMenu() {
+  const locale = useLocale();
   const t = useTranslations("TopMenu");
 
   return (
@@ -57,9 +59,7 @@ export function TopMenu({ locale }: { locale: string }) {
           <IoCartOutline className="w-5 h-5" />
         </Link>
 
-        <button className="m-2 p-2 rounded-md transition-all hover:bg-gray-100">
-          {t("menu")}
-        </button>
+        <MenuButton />
       </div>
     </nav>
   );

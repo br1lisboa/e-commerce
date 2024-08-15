@@ -14,5 +14,15 @@
     "title": "Whooops! Lo sentimos mucho.",
     "subtitle": "Puedes regresar al ",
     "button": "Inicio"
+  },
+  "SideBar": {
+    "search": "Buscar",
+    "perfil": "Perfil",
+    "orders": "Ordenes",
+    "logout": "Salir",
+    "login": "Ingresar",
+    "adminProducts": "Productos",
+    "adminOrders": "Ordenes",
+    "adminUsers": "Usuarios"
   }
 }

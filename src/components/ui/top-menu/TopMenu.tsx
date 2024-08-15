@@ -10,14 +10,14 @@ const CENTER_MENU = [
   { title: "kids", href: "/category/kids" },
 ];
 
-export function TopMenu() {
+export function TopMenu({ locale }: { locale: string }) {
   const t = useTranslations("TopMenu");
 
   return (
     <nav className="flex px-5 justify-between items-center w-full">
       {/* logo */}
       <div>
-        <Link href="/">
+        <Link href={`/${locale}`}>
           <span className={`${titleFont.className} antialiased font-bold`}>
             Teslo
           </span>
@@ -31,7 +31,7 @@ export function TopMenu() {
           <Link
             key={href}
             className="m-2 p-2 rounded-md transition-all hover:bg-gray-100"
-            href={href}
+            href={`/${locale}${href}`}
           >
             {t(title)}
           </Link>
@@ -42,14 +42,14 @@ export function TopMenu() {
       <div className="flex items-center">
         <Link
           className="m-2 rounded-md transition-all hover:bg-gray-100"
-          href="/search"
+          href={`${locale}/search`}
         >
           <IoSearchOutline className="w-5 h-5" />
         </Link>
 
         <Link
           className="relative m-2 rounded-md transition-all hover:bg-gray-100"
-          href="/cart"
+          href={`${locale}/cart`}
         >
           <span className="absolute text-xs px-1 rounded-full font-bold -top-2 -right-2 bg-blue-500 text-white">
             3

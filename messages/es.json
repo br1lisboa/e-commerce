@@ -1,0 +1,18 @@
+{
+  "locale": "es",
+  "TopMenu": {
+    "men": "Hombres",
+    "women": "Mujeres",
+    "kids": "Niños",
+    "menu": "Menu"
+  },
+  "Title": {
+    "title": "TIenda",
+    "subtitle": "Todos los productos"
+  },
+  "PageNotFound": {
+    "title": "Whooops! Lo sentimos mucho.",
+    "subtitle": "Puedes regresar al ",
+    "button": "Inicio"
+  }
+}

@@ -7,7 +7,7 @@
     "menu": "Menu"
   },
   "Title": {
-    "title": "TIenda",
+    "title": "Tienda",
     "subtitle": "Todos los productos"
   },
   "PageNotFound": {
@@ -24,5 +24,26 @@
     "adminProducts": "Productos",
     "adminOrders": "Ordenes",
     "adminUsers": "Usuarios"
+  },
+  "Categories": {
+    "men": {
+      "title": "Hombres",
+      "subtitle": "Todos los productos para hombres"
+    },
+    "women": {
+      "title": "Mujeres",
+      "subtitle": "Todos los productos para mujeres"
+    },
+    "kid": {
+      "title": "Niños",
+      "subtitle": "Todos los productos para niños"
+    }
+  },
+  "Product": {
+    "button": "Agregar al carrito",
+    "description": "Descripción",
+    "selectSize":{
+      "title": "Tallas disponibles"
+    }
   }
 }

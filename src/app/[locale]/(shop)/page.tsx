@@ -10,7 +10,7 @@ export default function ShopPage() {
 
   return (
     <>
-      <Title title={t("title")} subtitle={t("subtitle")} />
+      <Title title={t("title")} subtitle={t("subtitle")} className="px-5 md:px-0"/>
 
       <ProductGrid products={PRODUCTS} />
     </>

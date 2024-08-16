@@ -8,7 +8,7 @@ import { MenuButton } from "./MenuButton";
 const CENTER_MENU = [
   { title: "men", href: "/category/men" },
   { title: "women", href: "/category/women" },
-  { title: "kids", href: "/category/kids" },
+  { title: "kids", href: "/category/kid" },
 ];
 
 export function TopMenu() {

@@ -24,5 +24,26 @@
     "adminProducts": "Products",
     "adminOrders": "Orders",
     "adminUsers": "Users"
+  },
+  "Categories": {
+    "men": {
+      "title": "Men",
+      "subtitle": "All products for men"
+    },
+    "women": {
+      "title": "Women",
+      "subtitle": "All products for women"
+    },
+    "kid": {
+      "title": "Kids",
+      "subtitle": "All products for kids"
+    }
+  },
+  "Product": {
+    "button": "Add to cart",
+    "description": "Description",
+    "selectSize":{
+      "title": "Available sizes"
+    }
   }
 }

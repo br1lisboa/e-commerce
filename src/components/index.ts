@@ -1,6 +1,10 @@
 export * from "./not-found/PageNotFound";
-export * from "./product/product-grid/ProductGrid";
-export * from "./product/product-grid/ProductGridItem";
+export * from "./product/quantity-selector/QuantitySelector";
+export * from "./product/size-selector/SizeSelector";
+export * from "./product/slide-show/SlideShow";
+export * from "./products/product-grid/ProductGrid";
+export * from "./products/product-grid/ProductGridItem";
 export * from "./ui/sidebar/SideBar";
 export * from "./ui/title/Title";
 export * from "./ui/top-menu/TopMenu";
+export *from "./product/slide-show/SlideShowMobile";

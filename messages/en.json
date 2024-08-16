@@ -58,5 +58,65 @@
     "article": "articles",
     "subTotal": "Subtotal",
     "tax": "Taxes"
+  },
+  "Checkout": {
+    "title": "Cart",
+    "addItems": "Add more items",
+    "addItemsBtn": "Continue shopping",
+    "total": "Total",
+    "checkout": "Go to order",
+    "quantity": "No. Products",
+    "summary": "Purchase summary",
+    "article": "articles",
+    "subTotal": "Subtotal",
+    "tax": "Taxes",
+    "direction": "Direction",
+    "disclaimer": "By clicking 'Place order', you accept the store's terms and conditions and privacy policy.",
+    "address": {
+      "title": "Direction",
+      "subTitle": "Direction of delivery",
+      "name": "Name",
+      "lastName": "Last name",
+      "direction": "Direction",
+      "direction2": "Direction 2 (optional)",
+      "cp": "Sheep code",
+      "city": "City",
+      "country": "Country",
+      "select": "Select",
+      "ar": "Argentina",
+      "mx": "México",
+      "us": "United States",
+      "cr": "Costa Rica",
+      "phone": "Phone",
+      "next": "Next"
+    }
+  },
+  "Order": {
+    "title": "Order",
+    "addItems": "Add more items",
+    "addItemsBtn": "Continue shopping",
+    "total": "Total",
+    "quantity": "No. Products",
+    "summary": "Purchase summary",
+    "article": "articles",
+    "subTotal": "Subtotal",
+    "tax": "Taxes",
+    "direction": "Direction",
+    "orderPay": "Order paid",
+    "orderNoPay": "Pending payment"
+  },
+  "Table": {
+    "title": "Orders",
+    "id": "#ID",
+    "nameLastName": "Name and Last Name",
+    "state": "State",
+    "options": "Options",
+    "payed": "Payed",
+    "noPayed": "Order no payed",
+    "detail": "See order"
+  },
+  "Empty": {
+    "title": "No products found",
+    "button": "Go back to the store"
   }
 }

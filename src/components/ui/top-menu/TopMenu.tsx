@@ -51,7 +51,7 @@ export function TopMenu() {
 
         <Link
           className="relative m-2 rounded-md transition-all hover:bg-gray-100"
-          href={`${locale}/cart`}
+          href={`/${locale}/cart`}
         >
           <span className="absolute text-xs px-1 rounded-full font-bold -top-2 -right-2 bg-blue-500 text-white">
             3

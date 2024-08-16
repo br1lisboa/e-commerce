@@ -58,5 +58,67 @@
     "article": "artículos",
     "subTotal": "Subtotal",
     "tax": "Impuestos"
+  },
+  "Checkout": {
+    "title": "Verificar orden",
+    "addItems": "Ajustar elementos",
+    "addItemsBtn": "Editar carrito",
+    "total": "Total",
+    "checkout": "Colocar orden",
+    "quantity": "No. Productos",
+    "summary": "Resumen de la compra",
+    "article": "artículos",
+    "subTotal": "Subtotal",
+    "tax": "Impuestos",
+    "direction": "Dirección de envío",
+    "disclaimer": "* Aceptas los términos y condiciones de la tienda.",
+    "address": {
+      "title": "Dirección",
+      "subTitle": "Dirección de envío",
+      "name": "Nombre",
+      "lastName": "Apellido",
+      "direction": "Dirección",
+      "direction2": "Dirección 2 (opcional)",
+      "cp": "Código Postal",
+      "city": "Ciudad",
+      "country": "País",
+      "select": "Seleccionar",
+      "ar": "Argentina",
+      "mx": "México",
+      "us": "Estados Unidos",
+      "cr": "Costa Rica",
+      "phone": "Teléfono",
+      "next": "Siguiente"
+    }
+  },
+  "Order": {
+    "title": "Orden",
+    "addItems": "Ajustar elementos",
+    "addItemsBtn": "Editar carrito",
+    "total": "Total",
+    "checkout": "Colocar orden",
+    "quantity": "No. Productos",
+    "summary": "Resumen de la compra",
+    "article": "artículos",
+    "subTotal": "Subtotal",
+    "tax": "Impuestos",
+    "direction": "Dirección de envío",
+    "disclaimer": "* Aceptas los términos y condiciones de la tienda.",
+    "orderPay": "Orden pagada",
+    "orderNoPay": "Pendiente de pago"
+  },
+  "Table":{
+    "title":"Ordenes",
+    "id":"#ID",
+    "nameLastName":"Nombre y Apellido",
+    "state":"Estado",
+    "options":"Opciones",
+    "payed":"Pagada",
+    "noPayed":"Pendiente de pago",
+    "detail":"Ver orden"
+  },
+  "Empty":{
+    "title":"No hay productos en el carrito",
+    "button":"Regresar"
   }
 }

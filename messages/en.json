@@ -42,8 +42,21 @@
   "Product": {
     "button": "Add to cart",
     "description": "Description",
-    "selectSize":{
+    "selectSize": {
       "title": "Available sizes"
     }
+  },
+  "Cart": {
+    "title": "Cart",
+    "addItems": "Add more items",
+    "addItemsBtn": "Continue shopping",
+    "total": "Total",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "quantity": "No. Products",
+    "summary": "Purchase summary",
+    "article": "articles",
+    "subTotal": "Subtotal",
+    "tax": "Taxes"
   }
 }

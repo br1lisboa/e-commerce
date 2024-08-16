@@ -42,8 +42,21 @@
   "Product": {
     "button": "Agregar al carrito",
     "description": "Descripción",
-    "selectSize":{
+    "selectSize": {
       "title": "Tallas disponibles"
     }
+  },
+  "Cart": {
+    "title": "Carrito",
+    "addItems": "Agregar mas items",
+    "addItemsBtn": "Continua comprando",
+    "total": "Total",
+    "checkout": "Pagar",
+    "remove": "Eliminar",
+    "quantity": "No. Productos",
+    "summary": "Resumen de la compra",
+    "article": "artículos",
+    "subTotal": "Subtotal",
+    "tax": "Impuestos"
   }
 }

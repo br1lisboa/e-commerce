@@ -6,9 +6,9 @@ import { titleFont } from "@/config/fonts";
 import { MenuButton } from "./MenuButton";
 
 const CENTER_MENU = [
-  { title: "men", href: "/category/men" },
-  { title: "women", href: "/category/women" },
-  { title: "kids", href: "/category/kid" },
+  { title: "men", href: "/gender/men" },
+  { title: "women", href: "/gender/women" },
+  { title: "kids", href: "/gender/kid" },
 ];
 
 export function TopMenu() {

@@ -1,4 +1,5 @@
 interface SeedProduct {
+  id?: string | undefined;
   description: string;
   images: string[];
   inStock: number;

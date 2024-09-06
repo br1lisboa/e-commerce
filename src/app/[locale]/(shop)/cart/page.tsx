@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import { redirect } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { QuantitySelector, Title } from "@/components";
+import { Title } from "@/components";
 import { initialData } from "@/seed/seed";
+import { OrderSummary, ProductsInCart } from "./ui";
 
 const PRODUCTS_IN_CART = [
   initialData.products[0],
@@ -35,29 +35,7 @@ export default function CartPage() {
             </div>
 
             {/* Items */}
-            {PRODUCTS_IN_CART.map((product) => (
-              <div key={product.slug} className="flex gap-2">
-                <Image
-                  src={`/products/${product.images[0]}`}
-                  width={100}
-                  height={100}
-                  alt={product.title}
-                  style={{
-                    objectFit: "cover",
-                    objectPosition: "center",
-                    width: 100,
-                    height: 100,
-                  }}
-                />
-
-                <div>
-                  <p>{product.title}</p>
-                  <p>$ {product.price}</p>
-                  <QuantitySelector quantity={3} />
-                  <button className="underline">{t("remove")}</button>
-                </div>
-              </div>
-            ))}
+            <ProductsInCart />
           </div>
 
           {/* Checkout */}
@@ -65,19 +43,7 @@ export default function CartPage() {
             <div className="space-y-5">
               <h2 className="text-2xl">{t("summary")}</h2>
 
-              <div className="grid grid-cols-2 space-y-1">
-                <span>{t("quantity")}</span>
-                <span className="text-right">3 {t("article")}</span>
-
-                <span>{t("subTotal")}</span>
-                <span className="text-right">$ 100</span>
-
-                <span>{t("tax")} (15%)</span>
-                <span className="text-right">$ 100</span>
-
-                <span className="text-2xl pt-5">{t("total")}:</span>
-                <span className="text-right pt-5">$ 100</span>
-              </div>
+              <OrderSummary />
             </div>
 
             <div>

@@ -44,7 +44,8 @@
     "description": "Descripción",
     "selectSize": {
       "title": "Tallas disponibles"
-    }
+    },
+    "errorMessage": "Por favor selecciona una talla"
   },
   "Cart": {
     "title": "Carrito",
@@ -107,18 +108,18 @@
     "orderPay": "Orden pagada",
     "orderNoPay": "Pendiente de pago"
   },
-  "Table":{
-    "title":"Ordenes",
-    "id":"#ID",
-    "nameLastName":"Nombre y Apellido",
-    "state":"Estado",
-    "options":"Opciones",
-    "payed":"Pagada",
-    "noPayed":"Pendiente de pago",
-    "detail":"Ver orden"
+  "Table": {
+    "title": "Ordenes",
+    "id": "#ID",
+    "nameLastName": "Nombre y Apellido",
+    "state": "Estado",
+    "options": "Opciones",
+    "payed": "Pagada",
+    "noPayed": "Pendiente de pago",
+    "detail": "Ver orden"
   },
-  "Empty":{
-    "title":"No hay productos en el carrito",
-    "button":"Regresar"
+  "Empty": {
+    "title": "No hay productos en el carrito",
+    "button": "Regresar"
   }
 }

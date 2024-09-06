@@ -15,6 +15,7 @@ import {
 } from "@/components";
 
 import { titleFont } from "@/config/fonts";
+import { AddToCart } from "./ui/AddToCart";
 
 interface Props {
   params: {
@@ -22,18 +23,10 @@ interface Props {
   };
 }
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  // read route params
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug;
 
-  // fetch data
   const product = await getProductsBySlug(slug);
-
-  // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent).openGraph?.images || [];
 
   return {
     title: product?.title ?? "Product not found",
@@ -87,17 +80,7 @@ export default async function ({ params: { slug } }: Props) {
           <p className="text-lg">$ {product.price}</p>
         </div>
 
-        {/* Select tall */}
-        <SizeSelector
-          selectedSize={product.sizes[0]}
-          availableSizes={product.sizes}
-        />
-
-        {/* Select quantity */}
-        <QuantitySelector quantity={2} />
-
-        {/* Button */}
-        <Button />
+        <AddToCart product={product} />
 
         {/* Description */}
         <div>
@@ -107,12 +90,6 @@ export default async function ({ params: { slug } }: Props) {
       </div>
     </div>
   );
-}
-
-function Button() {
-  const t = useTranslations("Product");
-
-  return <button className="btn-primary">{t("button")}</button>;
 }
 
 function DescriptionProduct() {

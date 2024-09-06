@@ -9,5 +9,6 @@ export * from "./products/product-grid/ProductGridItem";
 export * from "./ui/footer/Footer";
 export * from "./ui/pagination/Pagination";
 export * from "./ui/sidebar/SideBar";
+export * from "./ui/skeleton/Skeleton";
 export * from "./ui/title/Title";
 export * from "./ui/top-menu/TopMenu";

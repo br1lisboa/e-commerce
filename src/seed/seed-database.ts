@@ -9,13 +9,19 @@ function capitalizeFirstLetter(string: String) {
 async function main() {
   // borra registros previos
   await Promise.all([
+    prisma.user.deleteMany(),
     prisma.productImage.deleteMany(),
     prisma.product.deleteMany(),
     prisma.category.deleteMany(),
   ]);
 
   // insertar datos
-  const { products, categories } = initialData;
+  const { products, categories, users } = initialData;
+
+  // insertar users
+  await prisma.user.createMany({
+    data: users,
+  });
 
   // insertar categorías
   const categoriesData = categories.map((category) => ({

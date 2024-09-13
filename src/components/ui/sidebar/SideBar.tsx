@@ -1,5 +1,7 @@
 "use client";
 
+import { Fragment, useEffect, useState } from "react";
+
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -16,12 +18,14 @@ import {
   IoTicketOutline,
 } from "react-icons/io5";
 import clsx from "clsx";
+import { logout } from "@/actions";
+import { useSession } from "next-auth/react";
 
 const MENU_ITEMS = [
   {
     icon: <IoPersonOutline size={30} />,
     title: "perfil",
-    href: "/perfil",
+    href: "/profile",
   },
   {
     icon: <IoTicketOutline size={30} />,
@@ -31,12 +35,12 @@ const MENU_ITEMS = [
   {
     icon: <IoLogInOutline size={30} />,
     title: "login",
-    href: "/login",
+    href: "/auth/login",
   },
   {
     icon: <IoLogOutOutline size={30} />,
     title: "logout",
-    href: "/register",
+    href: "/auth/login",
   },
 ];
 
@@ -44,7 +48,7 @@ const MENU_ITEMS_ADMIN = [
   {
     icon: <IoShirtOutline size={30} />,
     title: "adminProducts",
-    href: "/perfil",
+    href: "/perfil2",
   },
   {
     icon: <IoTicketOutline size={30} />,
@@ -60,9 +64,16 @@ const MENU_ITEMS_ADMIN = [
 
 export function SideBar() {
   const locale = useLocale();
+
   const t = useTranslations("SideBar");
 
   const { isSideMenuOpen, closeSideMenu } = useUIStore();
+
+  const { data: session } = useSession();
+
+  const isAuthenticated = Boolean(session?.user);
+
+  const isAdmin = session?.user.role === "admin";
 
   return (
     <div>
@@ -108,14 +119,36 @@ export function SideBar() {
 
         {/* Menu */}
         {MENU_ITEMS.map((item) => (
-          <Link
-            key={item.href}
-            href={`/${locale}/${item.href}`}
-            className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
-          >
-            {item.icon}
-            <span className="ml-3 text-xl">{t(item.title)}</span>
-          </Link>
+          <Fragment key={item.href}>
+            {isAuthenticated && item.title !== "login" && (
+              <Link
+                href={`/${locale}/${item.href}`}
+                className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+                onClick={() => {
+                  if (item.title === "logout") {
+                    logout();
+                  }
+                  closeSideMenu();
+                }}
+              >
+                {item.icon}
+                <span className="ml-3 text-xl">{t(item.title)}</span>
+              </Link>
+            )}
+
+            {!isAuthenticated && item.title === "login" && (
+              <Link
+                href={`/${locale}/${item.href}`}
+                className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+                onClick={() => {
+                  closeSideMenu();
+                }}
+              >
+                {item.icon}
+                <span className="ml-3 text-xl">{t(item.title)}</span>
+              </Link>
+            )}
+          </Fragment>
         ))}
 
         {/* Separator */}
@@ -123,14 +156,17 @@ export function SideBar() {
 
         {/* Menu admin */}
         {MENU_ITEMS_ADMIN.map((item) => (
-          <Link
-            key={item.href}
-            href={`/${locale}/${item.href}`}
-            className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
-          >
-            {item.icon}
-            <span className="ml-3 text-xl">{t(item.title)}</span>
-          </Link>
+          <Fragment key={item.href}>
+            {isAuthenticated && isAdmin && (
+              <Link
+                href={`/${locale}/${item.href}`}
+                className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+              >
+                {item.icon}
+                <span className="ml-3 text-xl">{t(item.title)}</span>
+              </Link>
+            )}
+          </Fragment>
         ))}
       </nav>
     </div>

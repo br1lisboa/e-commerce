@@ -21,3 +21,14 @@ export async function authenticate(
     return "Unknown Error";
   }
 }
+
+export async function login(email: string, password: string) {
+  try {
+    await signIn("credentials", { email, password });
+
+    return { ok: true };
+  } catch (error) {
+    console.error(error);
+    return { ok: false };
+  }
+}

@@ -9,22 +9,17 @@ import { IoInformationOutline } from "react-icons/io5";
 
 import { authenticate } from "@/actions";
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
   const locale = useLocale();
 
   const [state, dispatch] = useFormState(authenticate, undefined);
 
-  const router = useRouter();
-
   useEffect(() => {
-    // Esto por que necesito un refresh de la pantalla para actualizar datos.
     if (state === "Success") {
       window.location.replace("/");
-      // router.push("/");
-    } /* redirect("/"); */
-  }, [state, router]);
+    }
+  }, [state]);
 
   return (
     <form action={dispatch} className="flex flex-col">

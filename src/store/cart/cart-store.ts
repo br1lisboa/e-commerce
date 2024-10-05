@@ -22,6 +22,7 @@ type State = {
     quantityUpdated: number
   ) => void;
   removeProductFromCart: (id: string, size: string) => void;
+  cleanCart: () => void;
 };
 
 export const cartStore = create<State>()(
@@ -112,6 +113,10 @@ export const cartStore = create<State>()(
         );
 
         set({ cart: updatedCartProducts });
+      },
+
+      cleanCart: () => {
+        set({ cart: [] });
       },
     }),
 

@@ -1,5 +1,6 @@
 import { initialData } from "./seed";
 import prisma from "../lib/prisma";
+import { countries } from "./seed-countries";
 
 function capitalizeFirstLetter(string: String) {
   if (!string) return string;
@@ -9,7 +10,14 @@ function capitalizeFirstLetter(string: String) {
 async function main() {
   // borra registros previos
   await Promise.all([
+    prisma.orderAddress.deleteMany(),
+    prisma.orderItem.deleteMany(),
+    prisma.order.deleteMany(),
+
+    prisma.userAddress.deleteMany(),
     prisma.user.deleteMany(),
+    prisma.countries.deleteMany(),
+
     prisma.productImage.deleteMany(),
     prisma.product.deleteMany(),
     prisma.category.deleteMany(),
@@ -17,6 +25,11 @@ async function main() {
 
   // insertar datos
   const { products, categories, users } = initialData;
+
+  // insertar countries
+  await prisma.countries.createMany({
+    data: countries,
+  });
 
   // insertar users
   await prisma.user.createMany({

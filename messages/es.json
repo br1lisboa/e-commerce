@@ -89,7 +89,8 @@
       "us": "Estados Unidos",
       "cr": "Costa Rica",
       "phone": "Teléfono",
-      "next": "Siguiente"
+      "next": "Siguiente",
+      "remember-dir": "Recordar dirección"
     }
   },
   "Order": {

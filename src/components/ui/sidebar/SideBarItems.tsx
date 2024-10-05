@@ -26,7 +26,7 @@ const MENU_ITEMS = [
   {
     icon: <IoTicketOutline size={30} />,
     title: "orders",
-    href: "/tickets",
+    href: "/orders",
   },
   {
     icon: <IoLogInOutline size={30} />,
@@ -120,9 +120,9 @@ export function SideBarItems({
               <Link
                 href={`/${locale}/${item.href}`}
                 className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
-                onClick={() => {
+                onClick={async () => {
                   if (item.title === "logout") {
-                    logout();
+                    await logout();
                   }
                   closeSideMenu();
                 }}

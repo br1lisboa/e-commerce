@@ -19,8 +19,6 @@ export async function getPaginatedProductsWhitImages({
   if (isNaN(Number(take))) take = 12;
   if (take < 12) take = 12;
 
-  console.log("gender", gender);
-
   try {
     // Obtengo el total de productos
     const products = await prisma.product.findMany({

@@ -1,22 +1,12 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { Title } from "@/components";
-import { initialData } from "@/seed/seed";
 import { OrderSummary, ProductsInCart } from "./ui";
-
-const PRODUCTS_IN_CART = [
-  initialData.products[0],
-  initialData.products[1],
-  initialData.products[2],
-];
 
 export default function CartPage() {
   const locale = useLocale();
 
   const t = useTranslations("Cart");
-
-  if (PRODUCTS_IN_CART.length === 0) redirect(`/${locale}/empty`);
 
   return (
     <div className="flex justify-center items-center">

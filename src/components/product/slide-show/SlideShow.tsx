@@ -14,6 +14,7 @@ import "swiper/css/thumbs";
 import "./slideShow.css";
 
 import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { ProductImage } from "../product-image/ProductImage";
 
 interface ISlideShow {
   slides: string[];
@@ -44,8 +45,8 @@ export function SlideShow({ slides, title, classMame }: ISlideShow) {
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide}>
-            <Image
-              src={`/products/${slide}`}
+            <ProductImage
+              src={slide}
               alt={title ?? "Picture of the author"}
               width={1024}
               height={800}
@@ -66,11 +67,11 @@ export function SlideShow({ slides, title, classMame }: ISlideShow) {
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide}>
-            <Image
-              src={`/products/${slide}`}
+            <ProductImage
+              src={slide}
               alt={title ?? "Picture of the author"}
-              width={300}
-              height={300}
+              width={1024}
+              height={800}
               className="rounded-lg object-fill"
             />
           </SwiperSlide>

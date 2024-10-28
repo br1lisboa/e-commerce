@@ -32,6 +32,7 @@ export function InputSelectElement<T>(props: TInputSelectElement<T>) {
             <select
               onChange={(e) => field.onChange(e.target.value)}
               className="p-2 border rounded-md bg-gray-200"
+              defaultValue={field.value}
             >
               <option value="">{t("select")}</option>
               {options.map(({ label, value }) => (

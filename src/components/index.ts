@@ -1,9 +1,10 @@
 export { PayPalButton } from "./paypal/PayPalButton";
-
+export { ProductImage } from "./product/product-image/ProductImage";
+export { TableOrders } from "./table/TableOrders";
+export { TableProducts } from "./table/TableProducts";
 export { Title } from "./ui/title/Title";
-
-export * from "./products/product-grid/ProductGridItem";
-
+export * from "./form/InputChipElement";
+export * from "./form/InputTextAreaElement";
 export * from "./form/InputCheckElement";
 export * from "./form/InputSelectElement";
 export * from "./form/InputTextElement";
@@ -14,6 +15,7 @@ export * from "./product/slide-show/SlideShow";
 export * from "./product/slide-show/SlideShowMobile";
 export * from "./product/stock-label/StockLabel";
 export * from "./products/product-grid/ProductGrid";
+export * from "./products/product-grid/ProductGridItem";
 export * from "./providers/Providers";
 export * from "./ui/footer/Footer";
 export * from "./ui/pagination/Pagination";

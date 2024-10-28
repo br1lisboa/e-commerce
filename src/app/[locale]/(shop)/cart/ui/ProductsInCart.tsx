@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 
 import { cartStore } from "@/store";
-import { QuantitySelector, Skeleton } from "@/components";
+import { ProductImage, QuantitySelector, Skeleton } from "@/components";
 import Link from "next/link";
 
 export function ProductsInCart() {
@@ -27,8 +27,8 @@ export function ProductsInCart() {
     <>
       {cart.map((product) => (
         <div key={`${product.slug} - ${product.size}`} className="flex gap-2">
-          <Image
-            src={`/products/${product.image}`}
+          <ProductImage
+            src={product.image}
             width={100}
             height={100}
             alt={product.title}

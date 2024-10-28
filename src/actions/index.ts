@@ -1,3 +1,7 @@
+export { changeUserRole } from "./users/change-role-user";
+export { createUpdateProduct } from "./products/creat-update-product";
+export { getAllUsers } from "./users/get-all-users";
+export { getCategories } from "./categorys/get-gatecoryes";
 export * from "./address/user-address";
 export * from "./address/user-address";
 export * from "./address/user-address";

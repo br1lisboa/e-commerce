@@ -44,17 +44,17 @@ const MENU_ITEMS_ADMIN = [
   {
     icon: <IoShirtOutline size={30} />,
     title: "adminProducts",
-    href: "/perfil2",
+    href: "/admin/products",
   },
   {
     icon: <IoTicketOutline size={30} />,
     title: "adminOrders",
-    href: "/tickets2",
+    href: "/admin/orders",
   },
   {
     icon: <IoPeopleOutline size={30} />,
     title: "adminUsers",
-    href: "/tickets3",
+    href: "/admin/users",
   },
 ];
 
@@ -155,6 +155,7 @@ export function SideBarItems({
           <Fragment key={item.href}>
             {isAuthenticated && isAdmin && (
               <Link
+                onClick={closeSideMenu}
                 href={`/${locale}/${item.href}`}
                 className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
               >

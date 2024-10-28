@@ -1,30 +1,21 @@
-export const revalidate = 0;
+import { useLocale, useTranslations } from "next-intl";
+import { Title } from "../ui/title/Title";
+import { IoCardOutline } from "react-icons/io5";
+import Link from "next/link";
 
-import { getOrderByUser } from "@/actions";
-import { TableOrders } from "@/components";
-import { redirect } from "next/navigation";
-
-export default async function () {
-  const { ordersByUser, ok } = await getOrderByUser();
-
-  if (!ok) {
-    redirect("/");
-  }
-
-  return <TableOrders title="Ordenes" orders={ordersByUser} />;
-}
-
-/* function Table({
+export function TableOrders({
   orders = [],
+  title,
 }: {
   orders: { id: string; isPaid: boolean; OrderAddress: any }[] | undefined;
+  title: string;
 }) {
   const t = useTranslations("Table");
   const locale = useLocale();
 
   return (
     <>
-      <Title title={t("title")} />
+      <Title title={title} />
 
       <div className="mb-10">
         <table className="min-w-full">
@@ -97,4 +88,4 @@ export default async function () {
       </div>
     </>
   );
-} */
+}

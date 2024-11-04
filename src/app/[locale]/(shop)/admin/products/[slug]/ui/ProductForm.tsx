@@ -1,11 +1,12 @@
 "use client";
 
-import { createUpdateProduct } from "@/actions";
+import { createUpdateProduct, deleteImage } from "@/actions";
 import {
   InputChipElement,
   InputSelectElement,
   InputTextAreaElement,
   InputTextElement,
+  ProductImage,
 } from "@/components";
 import { InputImageElement } from "@/components/form/InputImageElement";
 import { IProduct } from "@/interfaces";
@@ -20,7 +21,9 @@ export const ProductForm = ({ product, categ, isForCreate }: Props) => {
   const router = useRouter();
   const locale = useLocale();
 
-  const { control, handleSubmit, formState } = useForm<Partial<IProduct>>({
+  const { control, handleSubmit } = useForm<
+    Partial<IProduct>
+  >({
     defaultValues: isForCreate
       ? undefined
       : {
@@ -37,8 +40,6 @@ export const ProductForm = ({ product, categ, isForCreate }: Props) => {
     resolver: zodResolver(schema),
     mode: "all",
   });
-
-  console.log(formState.errors);
 
   async function onSubmit(data: Partial<IProduct>) {
     const formData = new FormData();
@@ -64,11 +65,18 @@ export const ProductForm = ({ product, categ, isForCreate }: Props) => {
 
     formData.append("categoryId", productToSave.categoryId ?? "");
     formData.append("gender", productToSave.gender ?? "");
-    // formData.append("images", productToSave.images ?? []);
+
+    // console.log(productToSave.images);
+
+    if (productToSave.images) {
+      // formData.append("images", productToSave.images as any);
+
+      productToSave.images.forEach((image, index) => {
+        formData.append(`images[${index}]`, image);
+      });
+    }
 
     const { ok, product: productTX } = await createUpdateProduct(formData);
-    console.log({ ok });
-    console.log(formData);
 
     if (!ok) {
       alert("Producto no se pudo actualizar");
@@ -76,6 +84,10 @@ export const ProductForm = ({ product, categ, isForCreate }: Props) => {
     }
 
     router.replace(`/${locale}/admin/products/${productTX?.slug}`);
+  }
+
+  async function onDeleteImage(id: string, url: string) {
+    await deleteImage(Number(id), url);
   }
 
   const categories = categ
@@ -156,23 +168,13 @@ export const ProductForm = ({ product, categ, isForCreate }: Props) => {
           options={categories ?? []}
         />
 
-        {/* <div className="flex flex-col mb-2">
-          <span>Fotos</span>
-          <input
-            type="file"
-            multiple
-            className="p-2 border rounded-md bg-gray-200"
-            accept="image/png, image/jpeg, image/avif"
-          />
-        </div> */}
-
         <InputImageElement control={control} name={"images"} />
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {product?.ProductImage.map((image) => (
             <div key={image.id} className="space-y-1 m-auto ">
-              <Image
-                src={`/products/${image.url}`}
+              <ProductImage
+                src={image.url}
                 alt={String(image.id)}
                 width={300}
                 height={300}
@@ -180,7 +182,7 @@ export const ProductForm = ({ product, categ, isForCreate }: Props) => {
               />
               <button
                 onClick={() => {
-                  console.log(image.id, image.url);
+                  onDeleteImage(String(image.id), image.url);
                 }}
                 className="btn-danger w-full"
                 type="button"
@@ -211,7 +213,7 @@ interface Props {
 
 const schema = z.object({
   description: z.string().min(5),
-  images: z.string().optional(),
+  images: z.array(z.any()).optional(),
   inStock: z.coerce.number(),
   price: z.string().refine((val) => !isNaN(Number(val))),
   sizes: z.array(z.string()),

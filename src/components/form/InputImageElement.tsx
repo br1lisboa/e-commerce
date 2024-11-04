@@ -22,8 +22,11 @@ export function InputImageElement<T>({ control, name }: TInputImageElement<T>) {
               multiple
               className="p-2 border rounded-md bg-gray-200"
               accept="image/png, image/jpeg, image/avif"
-              value={field.field.value}
-              onChange={field.field.onChange}
+              onChange={(e) => {
+                field.field.onChange(
+                  e.target.files ? Array.from(e.target.files) : []
+                );
+              }}
             />
           </div>
         );

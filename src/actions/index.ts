@@ -1,5 +1,6 @@
 export { changeUserRole } from "./users/change-role-user";
 export { createUpdateProduct } from "./products/creat-update-product";
+export { deleteImage } from "./products/delete-image";
 export { getAllUsers } from "./users/get-all-users";
 export { getCategories } from "./categorys/get-gatecoryes";
 export * from "./address/user-address";

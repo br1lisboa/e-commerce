@@ -26,5 +26,7 @@ y cambiar las variables de entorno.
 7- Correr el proyecto
 ```npm run dev```
 
+8- Limpiar localStorage del navegador.
+
 
 ### PROD

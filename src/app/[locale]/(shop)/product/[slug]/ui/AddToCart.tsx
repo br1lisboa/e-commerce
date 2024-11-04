@@ -45,7 +45,7 @@ export function AddToCart({ product }: Props) {
       id: product["id"],
       slug: product["slug"],
       title: product["title"],
-      price: product["price"],
+      price: product["price"] as number,
       quantity: selection["quantity"],
       size: selection["size"],
       image: product["images"][0],

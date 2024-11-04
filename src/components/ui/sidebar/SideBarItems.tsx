@@ -115,7 +115,7 @@ export function SideBarItems({
 
         {/* Menu */}
         {MENU_ITEMS.map((item) => (
-          <Fragment key={item.href}>
+          <Fragment key={item.title}>
             {isAuthenticated && item.title !== "login" && (
               <Link
                 href={`/${locale}/${item.href}`}

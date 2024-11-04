@@ -34,7 +34,7 @@ export default async function ShopPage({ searchParams }: Props) {
     <>
       <TitlePage />
 
-      <ProductGrid products={products} />
+      <ProductGrid products={products as any} />
 
       <Pagination totalPages={totalPages} />
     </>

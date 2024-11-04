@@ -38,7 +38,7 @@ export default async function ({ params: { gender }, searchParams }: Props) {
     <>
       <TitlePage genderT={gender} />
 
-      <ProductGrid products={products} />
+      <ProductGrid products={products as any} />
 
       <Pagination totalPages={totalPages} />
     </>

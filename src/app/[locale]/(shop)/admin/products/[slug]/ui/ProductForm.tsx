@@ -209,6 +209,7 @@ interface Props {
     message?: undefined;
   };
   isForCreate: boolean;
+  testDefaultValues: Partial<IProduct>;
 }
 
 const schema = z.object({

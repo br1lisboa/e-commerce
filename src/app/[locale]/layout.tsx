@@ -10,10 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s - Teslo | Shop",
-    default: "Home - Teslo | Shop",
+    template: "%s - Casca | Shop",
+    default: "Home - Casca | Shop",
   },
-  description: "E-commerce website for Teslo products",
+  description: "E-commerce website for Casca products",
 };
 
 export default async function RootLayout({

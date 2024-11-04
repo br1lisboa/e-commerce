@@ -9,7 +9,7 @@ export function Footer() {
         href={"#"}
         className="flex justify-center items-center text-xs gap-2"
       >
-        <span className={`${titleFont.className} antialiased font-bold`}>Teslo</span>
+        <span className={`${titleFont.className} antialiased font-bold`}>Casca</span>
         <span>| shop</span>
         <span>
           <FaRegCopyright size={15} />

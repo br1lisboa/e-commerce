@@ -22,7 +22,7 @@ export function TopMenu() {
       <div>
         <Link href={`/${locale}`}>
           <span className={`${titleFont.className} antialiased font-bold`}>
-            Teslo
+            Casca
           </span>
           <span> | Shop</span>
         </Link>
